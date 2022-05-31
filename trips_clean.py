@@ -8,7 +8,7 @@ print(df.isnull().sum())
 
 
 
-df = df.drop(['Unnamed: 0', 'start_station_name' , 'end_station_name' ,'rental_access_method'], axis=1)
+df = df.drop(['Unnamed: 0', 'start_station_name' , 'end_station_name' ,'rental_access_method', 'start_station_latitude', 'start_station_longitude' , 'end_station_latitude', 'end_station_longitude'], axis=1)
 
 
 df[['ride_id', 'bike_type']] = df[['ride_id', 'bike_type']].fillna('NA')
@@ -22,7 +22,7 @@ df = df.astype({'bike_id': int})
 
 print((df.isnull().sum() * 100) / (len(df.index)))
 
-df.to_csv('trips_tableau.csv', index=False)
+df.to_csv('trips.csv', index=False)
 
 
 
